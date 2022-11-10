@@ -1,0 +1,202 @@
+body{
+    background-color: gainsboro;
+}
+.wrapper{
+    overflow: hidden;
+    min-height: 100%;
+   position: relative;
+   padding: 20px;
+}
+.titles{
+    margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  border: 5px double goldenrod;
+  padding-top: 20px;
+  background-color: antiquewhite;
+   
+}
+.titles__block{
+    margin: 0 auto;
+    width: 400px;
+    height: 150px;
+    background-color: rgb(158, 75, 75);
+
+    animation: background-color 3s ease;
+    margin-bottom: 40px;
+}
+.titles__block:hover{
+ background-color: aquamarine;
+ border-radius: 15px;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    padding: 40px;
+    animation: title 5s ease;
+}
+
+@keyframes title{
+   0%{
+     transform: translate(0px; 50%);
+     opacity: 0;
+     }
+     100%{
+        transform: translate(0px; 0%);
+        opacity: 1;
+     }
+}
+
+@keyframes background-color{
+    0%{
+        transform: translate(0px; 50%);
+        opacity: 0;
+        }
+      
+        100%{
+           transform: translate(0px;0%);
+           opacity: 1;
+        } 
+}
+.sub-title{
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation: sub-title 4s ease 0.5s forwards;
+    transform: translate(0px; 50%);
+    opacity: 0;
+    
+}
+
+
+@keyframes sub-title{
+    0%{
+
+    }
+    100%{
+        transform: translate(0px, 0%);
+        opacity: 1;
+    }
+}
+.link{
+    font-size: 24px;
+    color: gray;
+    transition: all 0,3s ease 0s;
+    position: relative;
+    padding-left: 30px;
+}
+.link::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: brown;
+    animation-name: link-rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+     }
+@keyframes link-rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.link::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:0%;
+    height: 2px;
+    transition: width 0.5s ease 0s;
+    background-color: aqua;
+}
+.link:hover{
+    color: #000;
+}
+
+.link:hover::before{
+    animation-play-state: paused;  
+   
+}
+.link:hover::after{
+    width: 100%;
+}
+.car{
+   position: relative;
+   transform: translate(-200%, 0px);
+   animation: car-ride 8s linear forwards;
+   
+}
+.car__up{
+    width: 200px;
+    margin:100px 0px 0px 400px ;
+    padding: 20px;
+    border: 5px solid #000;
+    border-radius: 10px;
+    background-color: rosybrown;
+}
+.car__down{
+    width: 400px;
+    margin:0px 0px 0px 300px;
+    padding: 40px;
+    border: 5px solid #000;
+    border-radius: 15px;
+    background-color: olivedrab;
+}
+.car__wheels{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    left: 0;
+}
+.car__wheel{
+    width: 80px;
+    height: 80px;
+    background-color: gray;
+    position: absolute;
+    border-radius: 50%;
+    outline: 8px dashed #000;
+    animation: wheels 8s linear forwards;
+    
+}
+.car__wheel:first-child{
+   left: 300px;
+}
+.car__wheel:last-child{
+    right: 620px;
+}
+@keyframes wheels{
+    0%{
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: rotate(360deg)
+    }
+    80%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes car-ride{
+    0%{
+        transform: translate(-200%, 0px);
+    }
+    20%{
+        transform: translate(100px, 0px);
+    }
+    80%{
+        transform: translate(100px, 0px);
+    }
+    100%{
+        transform: translate(2000px, 0px);
+    }
+}
